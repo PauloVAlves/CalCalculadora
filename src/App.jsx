@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import FoodInput from './components/FoodInput';
 import Table from './components/Table';
+import Calculate from './components/Calculate';
 import './App.css';
 
 function App() {
@@ -29,25 +30,33 @@ function App() {
     fetchNames();
   }, []);
 
-  function addToList(foodItem) {
-    setToCalculateList((toCalculateList) => [...toCalculateList, foodItem]);
-    addToTable(foodItem);
+  function addToList(name, quantity) {
+    foods.forEach((food) => {
+      if (food.description === name) {
+        const newItem = {
+          id: food.id,
+          foodName: food.description,
+          cal: food.attributes.energy.kcal,
+          base: food.base_qty,
+          quantity: Number(quantity),
+        };
+        setToCalculateList([...toCalculateList, newItem]);
+      }
+    });
   }
 
-  const addToTable = (foodItem) => {
-    console.log(foodItem);
-  };
+  toCalculateList.map((food) => console.log(food));
 
-  const deleteRow = (e) => {
-    e.target.closest('tr').remove();
-    setToCalculateList.filter((food, id) => food.id !== id);
+  const deleteItem = (id) => {
+    setToCalculateList(toCalculateList.filter((food) => food.id !== id));
   };
 
   return (
     <div className='App'>
       <Header />
       <FoodInput foods={foods} addToTable={addToList} />
-      <Table CalculateTable={toCalculateList} deleteRow={deleteRow} />
+      <Table listTable={toCalculateList} deleteItem={deleteItem} />
+      <Calculate calculateList={toCalculateList} />
     </div>
   );
 }

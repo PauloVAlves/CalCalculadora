@@ -1,12 +1,12 @@
 import { FaTimes } from 'react-icons/fa';
 
-const Food = ({ food, deleteRow }) => {
+const Food = ({ food, deleteItem }) => {
   return (
-    <tr>
-      <td>{food.foodname}</td>
+    <tr className='food-row'>
+      <td>{food.foodName}</td>
       <td>{food.quantity}</td>
       <td>
-        <FaTimes onClick={() => deleteRow(food.id)} />
+        <FaTimes onClick={() => deleteItem(food.id)} />
       </td>
     </tr>
   );

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import NameList from './NameList';
 
 const FoodInput = ({ foods, addToTable }) => {
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
-  const [foodItem, setFoodItem] = useState({});
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -17,26 +16,14 @@ const FoodInput = ({ foods, addToTable }) => {
       alert('A quantidade é obrigatória');
       return;
     }
-    console.log(name);
-    console.log(quantity);
-    foods.map(
-      (food) =>
-        food.description === name &&
-        addToTable({
-          id: food.id,
-          foodname: food.description,
-          calories: food.attributes.energy.kcal,
-          base: food.base_qty,
-          quantity: quantity,
-        })
-    );
-    /* addToTable(foodItem); */
+
+    addToTable(name, quantity);
 
     setName('');
     setQuantity('');
   };
   return (
-    <form onSubmit={onSubmit}>
+    <form>
       <label htmlFor='addName'>Alimento:</label>
       <input
         autoComplete='false'
@@ -56,7 +43,9 @@ const FoodInput = ({ foods, addToTable }) => {
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
       />
-      <input type='submit' value='Adicionar' />
+      <button value='Adicionar' onClick={onSubmit}>
+        add
+      </button>
     </form>
   );
 };

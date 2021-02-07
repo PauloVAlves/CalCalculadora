@@ -1,6 +1,6 @@
-import Food from './Food'
+import Food from './Food';
 
-const Table = ({CalculateTable, deleteRow}) => {
+const Table = ({ listTable, deleteItem }) => {
   return (
     <table>
       <thead>
@@ -11,9 +11,15 @@ const Table = ({CalculateTable, deleteRow}) => {
         </tr>
       </thead>
       <tbody className='table-body'>
-        {CalculateTable.length > 0 ? CalculateTable.map((food) => (
-        <Food key={food.id} food={food} deleteRow={deleteRow}/>
-          )) : <tr><td>Nenhum alimento foi adicionado à receita</td></tr>}
+        {listTable.length > 0 ? (
+          listTable.map((food) => (
+            <Food key={food.id} food={food} deleteItem={deleteItem} />
+          ))
+        ) : (
+          <tr>
+            <td>Nenhum alimento foi adicionado à receita</td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
