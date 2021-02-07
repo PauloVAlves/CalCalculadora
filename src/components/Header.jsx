@@ -1,13 +1,7 @@
+import Navbar from './Nav/Navbar';
+
 const Header = () => {
-  return (
-    <header>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </header>
-  );
+  return <Navbar />;
 };
 
 export default Header;

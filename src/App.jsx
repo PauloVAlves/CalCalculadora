@@ -3,7 +3,7 @@ import Header from './components/Header';
 import FoodInput from './components/FoodInput';
 import Table from './components/Table';
 import Calculate from './components/Calculate';
-import './App.css';
+import Footer from './components/Footer';
 
 function App() {
   const API_URL = 'http://localhost:4000/api/v1/food';
@@ -57,6 +57,7 @@ function App() {
       <FoodInput foods={foods} addToTable={addToList} />
       <Table listTable={toCalculateList} deleteItem={deleteItem} />
       <Calculate calculateList={toCalculateList} />
+      <Footer />
     </div>
   );
 }
