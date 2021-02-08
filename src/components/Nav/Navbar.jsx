@@ -10,6 +10,7 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   .logo {
+    font-size: 1.5rem;
     padding: 15px 0;
   }
 `;
