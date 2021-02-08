@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navbar from './components/Nav/Navbar';
 import Form from './components/Form/Form';
 import FoodTable from './components/Table/FoodTable';
 import Calculate from './components/Form/Calculate';
 import Footer from './components/Footer';
+import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   const API_URL = 'http://localhost:4000/api/v1/food';
@@ -53,11 +56,23 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar />
-      <Form foods={foods} addToTable={addToList} />
-      <FoodTable listTable={toCalculateList} deleteItem={deleteItem} />
-      <Calculate calculateList={toCalculateList} />
-      <Footer />
+      <Router>
+        <Navbar />
+        <Route
+          path='/'
+          exact
+          render={(props) => (
+            <>
+              <Form foods={foods} addToTable={addToList} />
+              <FoodTable listTable={toCalculateList} deleteItem={deleteItem} />
+              <Calculate calculateList={toCalculateList} />
+            </>
+          )}
+        />
+        <Route path='/sobre' component={About} />
+        <Route path='/contato' component={Contact} />
+        <Footer />
+      </Router>
     </div>
   );
 }

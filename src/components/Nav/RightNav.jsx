@@ -10,6 +10,15 @@ const Ul = styled.ul`
     padding: 18px 10px;
   }
 
+  a {
+    text-decoration: none;
+    color: #f2506e;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #0d2538;
@@ -32,9 +41,15 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>Home</li>
-      <li>Sobre nós</li>
-      <li>Contato</li>
+      <li>
+        <a href='/'>Home</a>
+      </li>
+      <li>
+        <a href='/sobre'>Sobre</a>
+      </li>
+      <li>
+        <a href='/contato'>Contato</a>
+      </li>
     </Ul>
   );
 };
