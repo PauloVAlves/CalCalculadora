@@ -8,6 +8,8 @@ const Nav = styled.nav`
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+  background-color: #141738;
+  color: #f2506e;
 
   .logo {
     font-size: 1.5rem;

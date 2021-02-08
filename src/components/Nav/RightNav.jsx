@@ -4,6 +4,7 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  font-size: 1.5rem;
 
   li {
     padding: 18px 10px;
@@ -17,9 +18,11 @@ const Ul = styled.ul`
     top: 0;
     right: 0;
     height: 100vh;
-    wodth: 300px;
+    width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
+    z-index: 10;
+    font-size: 2rem;
 
     li {
       color: #fff;

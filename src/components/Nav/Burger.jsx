@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import RightNav from './RightNav';
 
 const StyledBurger = styled.div`
+  cursor: pointer;
   width: 2rem;
   height: 2rem;
   position: fixed;
   top: 15px;
   right: 20px;
-  z-index: 10;
+  z-index: 11;
   display: none;
 
   @media (max-width: 768px) {
@@ -20,7 +21,7 @@ const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => (open ? '#ccc' : '#333')};
+    background-color: ${({ open }) => (open ? '#ccc' : '#F2506E')};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;

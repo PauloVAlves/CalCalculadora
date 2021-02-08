@@ -3,7 +3,7 @@ import Label from './Label';
 import NamesList from './NamesList';
 
 const StyledInput = styled.input.attrs({
-  autocomplete: false,
+  autocomplete: 'off',
 })`
   font-size: 1.1rem;
   padding: 10px;
@@ -13,14 +13,38 @@ const StyledInput = styled.input.attrs({
   transition: 0.15s;
   text-align: center;
   margin-right: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    display: block;
+    max-width: 100%;
+  }
 `;
 
 const FoodInput = styled(StyledInput)`
   width: 560px;
+
+  @media (max-width: 1070px) {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
 `;
 
 const NumberInput = styled(StyledInput)`
   width: 120px;
+
+  @media (max-width: 768px) {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
 `;
 
 const Input = ({ name, setName, quantity, setQuantity, foods }) => {

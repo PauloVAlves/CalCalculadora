@@ -12,7 +12,7 @@ const Table = styled.table`
 
   thead {
     tr {
-      background-color: #0161e8;
+      background-color: #0d32ff;
       color: #fff;
       text-align: left;
     }
@@ -39,6 +39,55 @@ const Table = styled.table`
     tr:last-of-type {
       border-bottom: 2px solid #290cff;
     }
+  }
+
+  @media only screen and (max-width: 760px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+  }
+
+  thead {
+    tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 10%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type:before {
+    content: 'Alimento';
+  }
+  td:nth-of-type:before {
+    content: 'Quantidade';
+  }
+  td:nth-of-type:before {
+    content: 'Ações';
   }
 `;
 

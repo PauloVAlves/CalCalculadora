@@ -12,6 +12,11 @@ const Button = styled.button`
   &:hover {
     background-color: #290cff;
   }
+
+  @media (max-width: 768px) {
+    width: 40%;
+    font-size: 1.4rem;
+  }
 `;
 
 const Submit = ({ buttonName, onSubmit }) => {
