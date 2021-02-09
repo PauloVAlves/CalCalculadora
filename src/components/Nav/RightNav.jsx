@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Ul = styled.ul`
@@ -42,13 +43,13 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
       <li>
-        <a href='/'>Home</a>
+        <Link to='/'>Home</Link>
       </li>
       <li>
-        <a href='/sobre'>Sobre</a>
+        <Link to='/sobre'>Sobre</Link>
       </li>
       <li>
-        <a href='/contato'>Contato</a>
+        <Link to='/contato'>Contato</Link>
       </li>
     </Ul>
   );
