@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/Calculadora_de_calorias/static/js/main.eeed8f07.chunk.js",
+    "main.js.map": "/Calculadora_de_calorias/static/js/main.eeed8f07.chunk.js.map",
+    "runtime-main.js": "/Calculadora_de_calorias/static/js/runtime-main.81a00f2c.js",
+    "runtime-main.js.map": "/Calculadora_de_calorias/static/js/runtime-main.81a00f2c.js.map",
+    "static/js/2.220b2719.chunk.js": "/Calculadora_de_calorias/static/js/2.220b2719.chunk.js",
+    "static/js/2.220b2719.chunk.js.map": "/Calculadora_de_calorias/static/js/2.220b2719.chunk.js.map",
+    "index.html": "/Calculadora_de_calorias/index.html",
+    "static/js/2.220b2719.chunk.js.LICENSE.txt": "/Calculadora_de_calorias/static/js/2.220b2719.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81a00f2c.js",
+    "static/js/2.220b2719.chunk.js",
+    "static/js/main.eeed8f07.chunk.js"
+  ]
+}
