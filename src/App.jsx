@@ -10,7 +10,6 @@ import Contact from './components/Contact';
 
 function App() {
   const API_URL = 'https://floating-lowlands-85751.herokuapp.com/api/food';
-  // const API_URL = 'http://localhost:5000/api/food';
 
   const [foods, setFoods] = useState([]);
   const [toCalculateList, setToCalculateList] = useState([]);
