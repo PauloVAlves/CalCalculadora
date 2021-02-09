@@ -28,9 +28,7 @@ const About = () => {
       </AboutText>
       <br />
       <AboutText>
-        <a target='_blank' href='http://www.nepa.unicamp.br/taco/index.php'>
-          TACO
-        </a>
+        <a href='http://www.nepa.unicamp.br/taco/index.php'>TACO</a>
       </AboutText>
     </>
   );

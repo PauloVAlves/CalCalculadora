@@ -9,7 +9,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 function App() {
-  const API_URL = 'http://localhost:4000/api/v1/food';
+  const API_URL = 'https://floating-lowlands-85751.herokuapp.com/api/food';
+  // const API_URL = 'http://localhost:5000/api/food';
 
   const [foods, setFoods] = useState([]);
   const [toCalculateList, setToCalculateList] = useState([]);
@@ -18,8 +19,6 @@ function App() {
     const fetchNames = async () => {
       const res = await fetch(API_URL, {
         method: 'GET',
-        'Access-Control-Allow-Origins': '*',
-        'Access-Control-Allow-Credentials': true,
         mode: 'cors',
         cache: 'no-cache',
         headers: {
