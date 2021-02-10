@@ -58,6 +58,7 @@ const Input = ({ name, setName, quantity, setQuantity, foods }) => {
         type='text'
         name='foodName'
         list='names-list'
+        palceholder='Selecione o alimento'
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
@@ -70,6 +71,7 @@ const Input = ({ name, setName, quantity, setQuantity, foods }) => {
         type='number'
         name='add-quantity'
         id='add-quantity'
+        palceholder='em gramas'
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
       />
