@@ -59,7 +59,7 @@ const Loader = styled.div`
 `;
 
 const Loading = () => {
-  return <Loader>Loading</Loader>;
+  return <Loader></Loader>;
 };
 
 export default Loading;

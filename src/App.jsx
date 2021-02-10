@@ -67,7 +67,7 @@ function App() {
   if (error) {
     return (
       <div>
-        <Error message={error.message} />
+        <Error />
       </div>
     );
   } else if (!isLoaded) {
