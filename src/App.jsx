@@ -58,8 +58,6 @@ function App() {
     });
   }
 
-  toCalculateList.map((food) => console.log(food));
-
   const deleteItem = (id) => {
     setToCalculateList(toCalculateList.filter((food) => food.id !== id));
   };
