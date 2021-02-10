@@ -51,7 +51,7 @@ const Calculate = ({ calculateList }) => {
       getCaloriesPortion = food.quantity / food.base;
       setCaloriesPortion = food.cal * getCaloriesPortion;
       totalCalories += setCaloriesPortion;
-      totalRecipeCalories += food.cal;
+      totalRecipeCalories += setCaloriesPortion;
     });
 
     let div = totalGrams / portion;
