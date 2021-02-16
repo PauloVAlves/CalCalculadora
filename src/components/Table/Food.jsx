@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import DataContext from '../../data/DataContext';
+import {DataContext} from '../../data/DataContext';
 import { FaTimes } from 'react-icons/fa';
 
 const Food = ({ food }) => {

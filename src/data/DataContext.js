@@ -3,7 +3,7 @@ import React, { useState, useEffect, createContext } from 'react';
 export const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
-  const API_URL = 'https://serene-beyond-49841.herokuapp.com/api/food';
+  const API_URL = 'https://floating-lowlands-85751.herokuapp.com/api/food';
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -56,7 +56,7 @@ const DataProvider = ({ children }) => {
   };
   return (
     <DataContext.Provider
-      value={(error, isLoaded, foods, toCalculateList, addToList, deleteItem)}
+      value={{error, isLoaded, foods, toCalculateList, addToList, deleteItem}}
     >
       {children}
     </DataContext.Provider>

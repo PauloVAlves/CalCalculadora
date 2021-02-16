@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import DataContext from '../../data/DataContext';
+import {DataContext} from '../../data/DataContext';
 import styled from 'styled-components';
 import Button from './Button';
 
@@ -35,7 +35,7 @@ const PrintPortionResult = styled.p`
 `;
 
 const Calculate = () => {
-  const { calculateList } = useContext(DataContext);
+  const { toCalculateList } = useContext(DataContext);
   const [portion, setPortion] = useState('');
   const [finalResult, setFinalResult] = useState('');
   const [recipeTotalCalories, setRecipeTotalCalories] = useState('');
@@ -48,7 +48,7 @@ const Calculate = () => {
   const calcular = (e) => {
     e.preventDefault();
 
-    calculateList.forEach((food) => {
+    toCalculateList.forEach((food) => {
       totalGrams += food.quantity;
       getCaloriesPortion = food.quantity / food.base;
       setCaloriesPortion = food.cal * getCaloriesPortion;

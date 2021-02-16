@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { DataContext } from '../../data/DataContext';
 import Food from './Food';
 
 const Table = styled.table`
@@ -91,7 +93,8 @@ const Table = styled.table`
   }
 `;
 
-const FoodTable = ({ listTable }) => {
+const FoodTable = () => {
+  const { toCalculateList } = useContext(DataContext);
   return (
     <Table>
       <thead>
@@ -102,8 +105,8 @@ const FoodTable = ({ listTable }) => {
         </tr>
       </thead>
       <tbody className='table-body'>
-        {listTable.length > 0 ? (
-          listTable.map((food) => <Food key={food.id} food={food} />)
+        {toCalculateList.length > 0 ? (
+          toCalculateList.map((food) => <Food key={food.id} food={food} />)
         ) : (
           <tr>
             <td>Nenhum alimento foi adicionado à receita</td>

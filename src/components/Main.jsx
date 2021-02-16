@@ -10,6 +10,7 @@ import Contact from './Contact';
 import Error from './Error';
 import Loading from './Loading';
 import { DataContext } from '../data/DataContext';
+
 const Main = () => {
   const { error, isLoaded } = useContext(DataContext);
   if (error) {
@@ -18,9 +19,11 @@ const Main = () => {
         <Error />
       </div>
     );
-  } else if (!isLoaded) {
-    return <Loading />;
-  } else {
+  } 
+    else if (!isLoaded) {
+      return <Loading />;
+    }
+  else {
     return (
       <div className='App'>
         <Router>
