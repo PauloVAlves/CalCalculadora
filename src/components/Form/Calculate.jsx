@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import DataContext from '../../data/DataContext';
 import styled from 'styled-components';
 import Button from './Button';
 
@@ -33,7 +34,8 @@ const PrintPortionResult = styled.p`
   margin-top: 30px;
 `;
 
-const Calculate = ({ calculateList }) => {
+const Calculate = () => {
+  const { calculateList } = useContext(DataContext);
   const [portion, setPortion] = useState('');
   const [finalResult, setFinalResult] = useState('');
   const [recipeTotalCalories, setRecipeTotalCalories] = useState('');

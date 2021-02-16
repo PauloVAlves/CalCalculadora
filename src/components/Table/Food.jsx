@@ -1,6 +1,9 @@
+import { useContext } from 'react';
+import DataContext from '../../data/DataContext';
 import { FaTimes } from 'react-icons/fa';
 
-const Food = ({ food, deleteItem }) => {
+const Food = ({ food }) => {
+  const { deleteItem } = useContext(DataContext);
   return (
     <tr className='food-row'>
       <td>{food.foodName}</td>

@@ -47,7 +47,7 @@ const NumberInput = styled(StyledInput)`
   }
 `;
 
-const Input = ({ name, setName, quantity, setQuantity, foods }) => {
+const Input = ({ name, setName, quantity, setQuantity }) => {
   return (
     <>
       <Label htmlFor='addName' labelValue='Alimento'>
@@ -62,7 +62,7 @@ const Input = ({ name, setName, quantity, setQuantity, foods }) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <NamesList foods={foods} />
+      <NamesList />
       <Label htmlFor='addQuantity' labelValue='Quantidade'>
         Quantidade
       </Label>

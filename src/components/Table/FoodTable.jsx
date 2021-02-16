@@ -91,7 +91,7 @@ const Table = styled.table`
   }
 `;
 
-const FoodTable = ({ listTable, deleteItem }) => {
+const FoodTable = ({ listTable }) => {
   return (
     <Table>
       <thead>
@@ -103,9 +103,7 @@ const FoodTable = ({ listTable, deleteItem }) => {
       </thead>
       <tbody className='table-body'>
         {listTable.length > 0 ? (
-          listTable.map((food) => (
-            <Food key={food.id} food={food} deleteItem={deleteItem} />
-          ))
+          listTable.map((food) => <Food key={food.id} food={food} />)
         ) : (
           <tr>
             <td>Nenhum alimento foi adicionado à receita</td>

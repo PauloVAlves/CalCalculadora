@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import DataContext from '../../data/DataContext';
 import styled from 'styled-components';
 import Input from './Input';
 import Button from './Button';
@@ -9,7 +10,8 @@ const AddFoodForm = styled.form`
   text-align: center;
 `;
 
-const Form = ({ foods, addToTable }) => {
+const Form = () => {
+  const { addToTable } = useContext(DataContext);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   let buttonName = 'Adicionar';
@@ -39,7 +41,6 @@ const Form = ({ foods, addToTable }) => {
         setName={setName}
         quantity={quantity}
         setQuantity={setQuantity}
-        foods={foods}
       />
       <Button onSubmit={onSubmit} buttonName={buttonName} />
     </AddFoodForm>
