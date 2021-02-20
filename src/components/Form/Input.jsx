@@ -2,17 +2,24 @@ import styled from 'styled-components';
 import Label from './Label';
 import NamesList from './NamesList';
 
-const StyledInput = styled.input.attrs({
+const StyledInput = styled.input.attrs((props) => ({
+  placeholder: 'comece a digitar',
   autocomplete: 'off',
-})`
+}))`
+  display: block;
   font-size: 1.1rem;
   padding: 10px;
-  border: 1px solid;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
   transition: 0.15s;
   text-align: center;
-  margin-right: 30px;
+
+  &:hover {
+    border: 1px solid #000;
+  }
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -23,7 +30,7 @@ const StyledInput = styled.input.attrs({
 
 const FoodInput = styled(StyledInput)`
   width: 560px;
-
+  display: inline-block;
   @media (max-width: 1070px) {
     width: 80%;
     margin: auto;
@@ -37,8 +44,12 @@ const FoodInput = styled(StyledInput)`
   }
 `;
 
-const NumberInput = styled(StyledInput)`
-  width: 120px;
+const NumberInput = styled(StyledInput).attrs((props) => ({
+  placeholder: 'em gramas',
+}))`
+  width: 140px;
+  display: inline-block;
+  margin-right: 10px;
 
   @media (max-width: 768px) {
     width: 40%;

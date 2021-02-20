@@ -1,23 +1,31 @@
 import { useContext, useState } from 'react';
-import {DataContext} from '../../data/DataContext';
+import { DataContext } from '../../data/DataContext';
 import styled from 'styled-components';
 import Button from './Button';
+import Label from './Label';
 
 const CalculateForm = styled.form`
   margin-top: 30px;
   text-align: center;
 `;
 
-const PortionInput = styled.input`
+const PortionInput = styled.input.attrs((props) => ({
+  type: 'number',
+  placeholder: 'em gramas',
+}))`
   font-size: 1.1rem;
   padding: 10px;
-  border: 1px solid;
+  border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: 0;
   transition: 0.15s;
   text-align: center;
   margin-right: 30px;
-  width: 120px;
+  width: 140px;
+
+  &:hover {
+    border: 1px solid #000;
+  }
 `;
 
 const PrintTotalResult = styled.p`
@@ -65,8 +73,8 @@ const Calculate = () => {
   return (
     <>
       <CalculateForm onSubmit={calcular}>
+        <Label htmlFor='portion' labelValue='Porção'></Label>
         <PortionInput
-          type='number'
           name='calculate'
           id='calculate'
           value={portion}

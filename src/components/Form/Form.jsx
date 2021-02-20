@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import {DataContext} from '../../data/DataContext';
+import { DataContext } from '../../data/DataContext';
 import styled from 'styled-components';
 import Input from './Input';
 import Button from './Button';

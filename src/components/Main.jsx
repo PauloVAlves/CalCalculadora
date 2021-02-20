@@ -19,11 +19,9 @@ const Main = () => {
         <Error />
       </div>
     );
-  } 
-    else if (!isLoaded) {
-      return <Loading />;
-    }
-  else {
+  } else if (!isLoaded) {
+    return <Loading />;
+  } else {
     return (
       <div className='App'>
         <Router>
