@@ -3,7 +3,7 @@ import React, { useState, useEffect, createContext } from 'react';
 export const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
-  const API_URL = 'https://floating-lowlands-85751.herokuapp.com/api/food';
+  const API_URL = 'https://floating-lowlands-85751.herokuapp.com/v1/api/food';
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,12 +38,11 @@ const DataProvider = ({ children }) => {
 
   function addToList(name, quantity) {
     foods.forEach((food) => {
-      if (food.description === name) {
+      if (food.name === name) {
         const newItem = {
           id: food.id,
-          foodName: food.description,
-          cal: food.attributes.energy.kcal,
-          base: food.base_qty,
+          foodName: food.name,
+          cal: food.kcal,
           quantity: Number(quantity),
         };
         setToCalculateList([...toCalculateList, newItem]);
@@ -56,7 +55,7 @@ const DataProvider = ({ children }) => {
   };
   return (
     <DataContext.Provider
-      value={{error, isLoaded, foods, toCalculateList, addToList, deleteItem}}
+      value={{ error, isLoaded, foods, toCalculateList, addToList, deleteItem }}
     >
       {children}
     </DataContext.Provider>
