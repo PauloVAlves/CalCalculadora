@@ -52,22 +52,28 @@ const Calculate = () => {
   let totalCalories = 0;
   let totalRecipeCalories = 0;
   let setCaloriesPortion = 0;
+  const base_for_calc = 100;
 
   const calcular = (e) => {
     e.preventDefault();
 
-    toCalculateList.forEach((food) => {
-      totalGrams += food.quantity;
-      getCaloriesPortion = food.quantity / food.base;
-      setCaloriesPortion = food.cal * getCaloriesPortion;
-      totalCalories += setCaloriesPortion;
-      totalRecipeCalories += setCaloriesPortion;
-    });
+    if (toCalculateList.length < 1) {
+      alert('Não há ingredientes na receita.');
+      return;
+    } else {
+      toCalculateList.forEach((food) => {
+        totalGrams += food.quantity;
+        getCaloriesPortion = food.quantity / base_for_calc;
+        setCaloriesPortion = food.cal * getCaloriesPortion;
+        totalCalories += setCaloriesPortion;
+        totalRecipeCalories += setCaloriesPortion;
+      });
 
-    let div = totalGrams / portion;
-    let calculatedCalories = totalCalories / div;
-    setFinalResult(calculatedCalories);
-    setRecipeTotalCalories(totalRecipeCalories);
+      let div = totalGrams / portion;
+      let calculatedCalories = totalCalories / div;
+      setFinalResult(calculatedCalories);
+      setRecipeTotalCalories(totalRecipeCalories);
+    }
   };
 
   return (
