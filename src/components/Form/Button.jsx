@@ -6,16 +6,17 @@ const Button = styled.button`
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 10px;
   font-size: 1.1rem;
+  padding: 10px 40px;
 
   &:hover {
     background-color: #290cff;
   }
 
-  @media (max-width: 768px) {
-    width: 40%;
+  @media (max-width: 900px) {
+    width: 80%;
     font-size: 1.4rem;
+    margin: 10px auto;
   }
 `;
 
