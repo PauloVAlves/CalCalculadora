@@ -18,12 +18,16 @@ const NewTable = () => {
 
 const Table = styled.div`
   display: block;
-  max-width: 80%;
+  max-width: 60%;
   margin: auto;
   text-align: left;
 
   h3 {
     text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    max-width: 90%;
   }
 `;
 
