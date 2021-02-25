@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const Submit = ({ buttonName, onSubmit }) => {
+  return <Button onClick={onSubmit}>{buttonName}</Button>;
+};
+
 const Button = styled.button`
   cursor: pointer;
   background-color: #0161e8;
@@ -19,9 +23,5 @@ const Button = styled.button`
     margin: 10px auto;
   }
 `;
-
-const Submit = ({ buttonName, onSubmit }) => {
-  return <Button onClick={onSubmit}>{buttonName}</Button>;
-};
 
 export default Submit;

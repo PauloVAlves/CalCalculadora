@@ -3,6 +3,42 @@ import Label from './Label';
 import NamesList from './NamesList';
 import Button from './Button';
 
+const Input = ({ name, setName, quantity, setQuantity, onSubmit }) => {
+  let buttonName = 'Adicionar';
+  return (
+    <>
+      <Label htmlFor='addName' labelValue='Alimento'>
+        Alimento
+      </Label>
+      <FoodInput
+        className='food-name'
+        type='text'
+        name='foodName'
+        list='names-list'
+        palceholder='Selecione o alimento'
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <NamesList />
+      <Label htmlFor='addQuantity' labelValue='Quantidade'>
+        Quantidade
+      </Label>
+      <QuantityForm>
+        <NumberInput
+          className='food-quantity'
+          type='number'
+          name='add-quantity'
+          id='add-quantity'
+          palceholder='em gramas'
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+        />
+        <Button onSubmit={onSubmit} buttonName={buttonName} />
+      </QuantityForm>
+    </>
+  );
+};
+
 const StyledInput = styled.input.attrs((props) => ({
   placeholder: 'comece a digitar',
   autocomplete: 'off',
@@ -75,41 +111,5 @@ const NumberInput = styled(StyledInput).attrs((props) => ({
     margin-bottom: 10px;
   }
 `;
-
-const Input = ({ name, setName, quantity, setQuantity, onSubmit }) => {
-  let buttonName = 'Adicionar';
-  return (
-    <>
-      <Label htmlFor='addName' labelValue='Alimento'>
-        Alimento
-      </Label>
-      <FoodInput
-        className='food-name'
-        type='text'
-        name='foodName'
-        list='names-list'
-        palceholder='Selecione o alimento'
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <NamesList />
-      <Label htmlFor='addQuantity' labelValue='Quantidade'>
-        Quantidade
-      </Label>
-      <QuantityForm>
-        <NumberInput
-          className='food-quantity'
-          type='number'
-          name='add-quantity'
-          id='add-quantity'
-          palceholder='em gramas'
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
-        <Button onSubmit={onSubmit} buttonName={buttonName} />
-      </QuantityForm>
-    </>
-  );
-};
 
 export default Input;

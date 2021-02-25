@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const Loading = () => {
+  return <Loader></Loader>;
+};
+
 const Loader = styled.div`
   &,
   &:after,
@@ -57,9 +61,5 @@ const Loader = styled.div`
     }
   }
 `;
-
-const Loading = () => {
-  return <Loader></Loader>;
-};
 
 export default Loading;

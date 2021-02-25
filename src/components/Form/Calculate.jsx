@@ -4,6 +4,69 @@ import styled from 'styled-components';
 import Button from './Button';
 import Label from './Label';
 
+const Calculate = () => {
+  const { toCalculateList } = useContext(DataContext);
+  const [portion, setPortion] = useState('');
+  const [finalResult, setFinalResult] = useState('');
+  const [recipeTotalCalories, setRecipeTotalCalories] = useState('');
+  let totalGrams = 0;
+  let getCaloriesPortion = 0;
+  let totalCalories = 0;
+  let totalRecipeCalories = 0;
+  let setCaloriesPortion = 0;
+  const base_for_calc = 100;
+
+  const calcular = (e) => {
+    e.preventDefault();
+
+    if (toCalculateList.length < 1) {
+      alert('Não há ingredientes na receita.');
+      return;
+    } else {
+      toCalculateList.forEach((food) => {
+        totalGrams += food.quantity;
+        getCaloriesPortion = food.quantity / base_for_calc;
+        setCaloriesPortion = food.cal * getCaloriesPortion;
+        totalCalories += setCaloriesPortion;
+        totalRecipeCalories += setCaloriesPortion;
+      });
+
+      let div = totalGrams / portion;
+      let calculatedCalories = totalCalories / div;
+      setFinalResult(calculatedCalories);
+      setRecipeTotalCalories(totalRecipeCalories);
+    }
+  };
+
+  return (
+    <>
+      <CalculateForm onSubmit={calcular}>
+        <Label htmlFor='calculate' labelValue='Porção'>
+          Porção
+        </Label>
+        <PortionInput
+          name='calculate'
+          id='calculate'
+          value={portion}
+          onChange={(e) => setPortion(e.target.value)}
+        />
+        <Button onSubmit={calcular} buttonName='Calcular' />
+      </CalculateForm>
+
+      {finalResult !== '' && (
+        <>
+          <PrintTotalResult>
+            Calorias totais: {recipeTotalCalories.toFixed(1)}
+          </PrintTotalResult>
+          <PrintPortionResult>
+            Calorias por porção: {finalResult.toFixed(1)}
+          </PrintPortionResult>
+        </>
+      )}
+    </>
+  );
+};
+
 const CalculateForm = styled.form`
   width: 30%;
   margin: 30px auto;
@@ -68,68 +131,5 @@ const PrintPortionResult = styled.p`
   margin-top: 30px;
   margin-bottom: 100px;
 `;
-
-const Calculate = () => {
-  const { toCalculateList } = useContext(DataContext);
-  const [portion, setPortion] = useState('');
-  const [finalResult, setFinalResult] = useState('');
-  const [recipeTotalCalories, setRecipeTotalCalories] = useState('');
-  let totalGrams = 0;
-  let getCaloriesPortion = 0;
-  let totalCalories = 0;
-  let totalRecipeCalories = 0;
-  let setCaloriesPortion = 0;
-  const base_for_calc = 100;
-
-  const calcular = (e) => {
-    e.preventDefault();
-
-    if (toCalculateList.length < 1) {
-      alert('Não há ingredientes na receita.');
-      return;
-    } else {
-      toCalculateList.forEach((food) => {
-        totalGrams += food.quantity;
-        getCaloriesPortion = food.quantity / base_for_calc;
-        setCaloriesPortion = food.cal * getCaloriesPortion;
-        totalCalories += setCaloriesPortion;
-        totalRecipeCalories += setCaloriesPortion;
-      });
-
-      let div = totalGrams / portion;
-      let calculatedCalories = totalCalories / div;
-      setFinalResult(calculatedCalories);
-      setRecipeTotalCalories(totalRecipeCalories);
-    }
-  };
-
-  return (
-    <>
-      <CalculateForm onSubmit={calcular}>
-        <Label htmlFor='calculate' labelValue='Porção'>
-          Porção
-        </Label>
-        <PortionInput
-          name='calculate'
-          id='calculate'
-          value={portion}
-          onChange={(e) => setPortion(e.target.value)}
-        />
-        <Button onSubmit={calcular} buttonName='Calcular' />
-      </CalculateForm>
-
-      {finalResult !== '' && (
-        <>
-          <PrintTotalResult>
-            Calorias totais: {recipeTotalCalories.toFixed(1)}
-          </PrintTotalResult>
-          <PrintPortionResult>
-            Calorias por porção: {finalResult.toFixed(1)}
-          </PrintPortionResult>
-        </>
-      )}
-    </>
-  );
-};
 
 export default Calculate;

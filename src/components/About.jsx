@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-const AboutTitle = styled.h2`
-  margin-top: 50px;
-  border-bottom: 1px solid #ccc;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-`;
-const AboutText = styled.p`
-  width: 50%;
-  margin: auto;
-  font-size: 1.1rem;
-`;
 const About = () => {
   return (
     <>
@@ -33,5 +21,18 @@ const About = () => {
     </>
   );
 };
+
+const AboutTitle = styled.h2`
+  margin-top: 50px;
+  border-bottom: 1px solid #ccc;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+const AboutText = styled.p`
+  width: 50%;
+  margin: auto;
+  font-size: 1.1rem;
+`;
 
 export default About;

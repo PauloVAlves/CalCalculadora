@@ -3,6 +3,21 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import RightNav from './RightNav';
 
+const Burger = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+        <div />
+        <div />
+        <div />
+      </StyledBurger>
+      <RightNav open={open} />
+    </>
+  );
+};
+
 const StyledBurger = styled.div`
   cursor: pointer;
   width: 2rem;
@@ -41,20 +56,5 @@ const StyledBurger = styled.div`
     }
   }
 `;
-
-const Burger = () => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <RightNav open={open} />
-    </>
-  );
-};
 
 export default Burger;

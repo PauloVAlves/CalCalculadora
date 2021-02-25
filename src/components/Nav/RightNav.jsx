@@ -1,6 +1,22 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+const RightNav = ({ open }) => {
+  return (
+    <Ul open={open}>
+      <li>
+        <Link to='/'>Home</Link>
+      </li>
+      <li>
+        <Link to='/sobre'>Sobre</Link>
+      </li>
+      <li>
+        <Link to='/contato'>Contato</Link>
+      </li>
+    </Ul>
+  );
+};
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
@@ -39,20 +55,5 @@ const Ul = styled.ul`
     }
   }
 `;
-const RightNav = ({ open }) => {
-  return (
-    <Ul open={open}>
-      <li>
-        <Link to='/'>Home</Link>
-      </li>
-      <li>
-        <Link to='/sobre'>Sobre</Link>
-      </li>
-      <li>
-        <Link to='/contato'>Contato</Link>
-      </li>
-    </Ul>
-  );
-};
 
 export default RightNav;

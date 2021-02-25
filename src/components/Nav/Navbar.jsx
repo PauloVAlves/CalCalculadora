@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 import Burger from './Burger';
 
+const Navbar = () => {
+  return (
+    <Nav>
+      <div className='logo'>Calcalorias</div>
+      <Burger />
+    </Nav>
+  );
+};
+
 const Nav = styled.nav`
   width: 100%;
   height: 80px;
@@ -17,14 +26,5 @@ const Nav = styled.nav`
     padding: 15px 0;
   }
 `;
-
-const Navbar = () => {
-  return (
-    <Nav>
-      <div className='logo'>Calcalorias</div>
-      <Burger />
-    </Nav>
-  );
-};
 
 export default Navbar;

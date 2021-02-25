@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+const Contact = () => {
+  return (
+    <>
+      <ContactTitle>Contato</ContactTitle>
+      <ContactText>
+        Em caso de dúvidas, sugestões e reclamações, entre em contato pelo
+        <a href='mailto:contato@pauloalves.me'> email</a>.
+      </ContactText>
+    </>
+  );
+};
+
 const ContactTitle = styled.h2`
   margin-top: 50px;
   border-bottom: 1px solid #ccc;
@@ -12,17 +24,5 @@ const ContactText = styled.address`
   margin: auto;
   font-size: 1.1rem;
 `;
-
-const Contact = () => {
-  return (
-    <>
-      <ContactTitle>Contato</ContactTitle>
-      <ContactText>
-        Em caso de dúvidas, sugestões e reclamações, entre em contato pelo
-        <a href='mailto:contato@pauloalves.me'> email</a>.
-      </ContactText>
-    </>
-  );
-};
 
 export default Contact;
