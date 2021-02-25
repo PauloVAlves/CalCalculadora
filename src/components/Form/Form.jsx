@@ -2,19 +2,26 @@ import { useContext, useState } from 'react';
 import { DataContext } from '../../data/DataContext';
 import styled from 'styled-components';
 import Input from './Input';
-import Button from './Button';
 
 const AddFoodForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 50px;
   margin-bottom: 25px;
-  text-align: center;
+  text-align: left;
+
+  @media (max-width: 900px) {
+    min-width: 90%;
+  }
 `;
 
 const Form = () => {
   const { addToList } = useContext(DataContext);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
-  let buttonName = 'Adicionar';
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -41,8 +48,8 @@ const Form = () => {
         setName={setName}
         quantity={quantity}
         setQuantity={setQuantity}
+        onSubmit={onSubmit}
       />
-      <Button onSubmit={onSubmit} buttonName={buttonName} />
     </AddFoodForm>
   );
 };

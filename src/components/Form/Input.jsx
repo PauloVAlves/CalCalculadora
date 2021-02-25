@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import Label from './Label';
 import NamesList from './NamesList';
+import Button from './Button';
 
 const StyledInput = styled.input.attrs((props) => ({
   placeholder: 'comece a digitar',
   autocomplete: 'off',
 }))`
+  box-sizing: border-box;
   display: block;
   font-size: 1.1rem;
   padding: 10px;
@@ -13,7 +15,6 @@ const StyledInput = styled.input.attrs((props) => ({
   border-radius: 10px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 20px;
   transition: 0.15s;
   text-align: center;
 
@@ -21,44 +22,62 @@ const StyledInput = styled.input.attrs((props) => ({
     border: 1px solid #000;
   }
 
-  @media (max-width: 768px) {
-    font-size: 1rem;
+  @media (max-width: 900px) {
+    font-size: 1.2rem;
     display: block;
-    max-width: 100%;
   }
 `;
 
 const FoodInput = styled(StyledInput)`
-  width: 560px;
-  display: inline-block;
-  @media (max-width: 1070px) {
-    width: 80%;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media (max-width: 900px) {
+    width: 100%;
     margin: auto;
     margin-bottom: 10px;
   }
+`;
 
-  @media (max-width: 768px) {
-    width: 90%;
-    margin: auto;
-    margin-bottom: 10px;
+const QuantityForm = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  Button {
+    width: 45%;
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    Button {
+      width: 80%;
+    }
   }
 `;
 
 const NumberInput = styled(StyledInput).attrs((props) => ({
   placeholder: 'em gramas',
 }))`
-  width: 140px;
-  display: inline-block;
-  margin-right: 10px;
+  position: relative;
+  width: 45%;
+  margin-left: 0px;
+  margin-right: 0px;
 
-  @media (max-width: 768px) {
-    width: 40%;
+  @media (max-width: 900px) {
+    width: 80%;
     margin: auto;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 `;
 
-const Input = ({ name, setName, quantity, setQuantity }) => {
+const Input = ({ name, setName, quantity, setQuantity, onSubmit }) => {
+  let buttonName = 'Adicionar';
   return (
     <>
       <Label htmlFor='addName' labelValue='Alimento'>
@@ -77,15 +96,18 @@ const Input = ({ name, setName, quantity, setQuantity }) => {
       <Label htmlFor='addQuantity' labelValue='Quantidade'>
         Quantidade
       </Label>
-      <NumberInput
-        className='food-quantity'
-        type='number'
-        name='add-quantity'
-        id='add-quantity'
-        palceholder='em gramas'
-        value={quantity}
-        onChange={(e) => setQuantity(e.target.value)}
-      />
+      <QuantityForm>
+        <NumberInput
+          className='food-quantity'
+          type='number'
+          name='add-quantity'
+          id='add-quantity'
+          palceholder='em gramas'
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+        />
+        <Button onSubmit={onSubmit} buttonName={buttonName} />
+      </QuantityForm>
     </>
   );
 };

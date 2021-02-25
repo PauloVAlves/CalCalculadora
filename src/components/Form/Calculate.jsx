@@ -5,26 +5,52 @@ import Button from './Button';
 import Label from './Label';
 
 const CalculateForm = styled.form`
-  margin-top: 30px;
-  text-align: center;
+  width: 30%;
+  margin: 30px auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  Button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    margin: 20px auto;
+    width: 90%;
+
+    Button {
+      width: 80%;
+    }
+  }
 `;
 
 const PortionInput = styled.input.attrs((props) => ({
   type: 'number',
   placeholder: 'em gramas',
 }))`
-  font-size: 1.1rem;
-  padding: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  margin-bottom: 0;
-  transition: 0.15s;
+  font-size: 1.1rem;
   text-align: center;
-  margin-right: 30px;
-  width: 140px;
+  padding: 10px;
 
   &:hover {
     border: 1px solid #000;
+  }
+
+  @media (max-width: 900px) {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 80%;
   }
 `;
 
@@ -40,6 +66,7 @@ const PrintPortionResult = styled.p`
   font-size: 2.5rem;
   font-weight: 900;
   margin-top: 30px;
+  margin-bottom: 100px;
 `;
 
 const Calculate = () => {
@@ -79,7 +106,9 @@ const Calculate = () => {
   return (
     <>
       <CalculateForm onSubmit={calcular}>
-        <Label htmlFor='portion' labelValue='Porção'></Label>
+        <Label htmlFor='calculate' labelValue='Porção'>
+          Porção
+        </Label>
         <PortionInput
           name='calculate'
           id='calculate'

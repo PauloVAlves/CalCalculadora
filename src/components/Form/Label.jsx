@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const InputLabel = styled.label`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-family: 'Roboto', sans-serif;
-  margin-right: 10px;
+  text-align: left;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     text-align: left !important;
     font-size: 1rem;
   }
