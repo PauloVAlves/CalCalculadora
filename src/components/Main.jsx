@@ -8,6 +8,7 @@ import About from './About';
 import Contact from './Contact';
 import Error from './Error';
 import Loading from './Loading';
+import Policy from './Policy';
 import { DataContext } from '../data/DataContext';
 import NewTable from './Table/NewTable';
 
@@ -40,6 +41,7 @@ const Main = () => {
             />
             <Route path='/sobre/' component={About} />
             <Route path='/contato/' component={Contact} />
+            <Route path='/privacidade/' component={Policy} />
           </Switch>
           <Footer />
         </Router>
