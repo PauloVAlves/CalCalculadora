@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Footer = () => {
@@ -6,7 +7,8 @@ const Footer = () => {
 
   return (
     <FixedFooter>
-      copyright &copy; {year} - Todos os direitos reservados.
+      copyright &copy; {year} - Todos os direitos reservados.{' '}
+      <Link to='/privacidade'>Privacidade</Link>
     </FixedFooter>
   );
 };
@@ -19,6 +21,10 @@ const FixedFooter = styled.p`
   background-color: #ddd;
   text-align: center;
   padding: 4px;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default Footer;
