@@ -26,8 +26,15 @@ const Row = styled.div`
   border-bottom: none;
   font-size: 1.4rem;
 
+  &:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
   &:last-child {
     border-bottom: 1px solid #ccc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   @media (max-width: 900px) {
