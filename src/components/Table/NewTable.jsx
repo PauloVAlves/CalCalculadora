@@ -18,9 +18,10 @@ const NewTable = () => {
 
 const Table = styled.div`
   display: block;
-  max-width: 60%;
+  max-width: 50%;
   margin: auto;
   text-align: left;
+  cursor: pointer;
 
   h3 {
     text-align: center;

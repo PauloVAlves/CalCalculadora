@@ -60,7 +60,7 @@ const Form = () => {
 const AddFoodForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 60%;
+  max-width: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;

@@ -42,8 +42,6 @@ const StyledInput = styled.input.attrs((props) => ({
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 10px;
-  transition: 0.15s;
-  text-align: center;
   outline: none;
   transition: all 0.5s ease-in-out;
 
