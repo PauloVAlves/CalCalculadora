@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { DataContext } from '../../data/DataContext';
 import styled from 'styled-components';
 import Button from './Button';
-import Label from './Label';
+import Input from './Input';
 
 const Calculate = () => {
   const { toCalculateList } = useContext(DataContext);
@@ -41,10 +41,12 @@ const Calculate = () => {
   return (
     <>
       <CalculateForm onSubmit={calcular}>
-        <Label htmlFor='calculate' labelValue='Porção'>
-          Porção
-        </Label>
-        <PortionInput
+        <Input
+          label='Porção'
+          className='calculate'
+          type='number'
+          name='calculate'
+          placeholder='em gramas'
           name='calculate'
           id='calculate'
           value={portion}
@@ -105,10 +107,10 @@ const PortionInput = styled.input.attrs((props) => ({
   text-align: center;
   padding: 10px;
   outline: none;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 
   &:hover {
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     border: 1px solid #000;
   }
 
