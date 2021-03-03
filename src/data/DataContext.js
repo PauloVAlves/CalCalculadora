@@ -9,6 +9,9 @@ const DataProvider = ({ children }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [foods, setFoods] = useState([]);
   const [toCalculateList, setToCalculateList] = useState([]);
+  const [portion, setPortion] = useState('');
+  const [finalResult, setFinalResult] = useState(-1);
+  const [recipeTotalCalories, setRecipeTotalCalories] = useState(-1);
 
   useEffect(() => {
     const fetchNames = () => {
@@ -52,10 +55,34 @@ const DataProvider = ({ children }) => {
 
   const deleteItem = (id) => {
     setToCalculateList(toCalculateList.filter((food) => food.id !== id));
+    setFinalResult(-1);
+    setRecipeTotalCalories(-1);
+    toCalculateList < 1 && setPortion('');
+  };
+
+  const deleteTable = () => {
+    setToCalculateList([]);
+    setFinalResult(-1);
+    setRecipeTotalCalories(-1);
+    setPortion('');
   };
   return (
     <DataContext.Provider
-      value={{ error, isLoaded, foods, toCalculateList, addToList, deleteItem }}
+      value={{
+        error,
+        isLoaded,
+        foods,
+        toCalculateList,
+        addToList,
+        deleteItem,
+        deleteTable,
+        finalResult,
+        setFinalResult,
+        recipeTotalCalories,
+        setRecipeTotalCalories,
+        portion,
+        setPortion,
+      }}
     >
       {children}
     </DataContext.Provider>

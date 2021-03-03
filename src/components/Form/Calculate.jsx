@@ -5,10 +5,16 @@ import Button from './Button';
 import Input from './Input';
 
 const Calculate = () => {
-  const { toCalculateList } = useContext(DataContext);
-  const [portion, setPortion] = useState('');
-  const [finalResult, setFinalResult] = useState('');
-  const [recipeTotalCalories, setRecipeTotalCalories] = useState('');
+  const {
+    toCalculateList,
+    finalResult,
+    setFinalResult,
+    recipeTotalCalories,
+    setRecipeTotalCalories,
+    portion,
+    setPortion,
+  } = useContext(DataContext);
+
   let totalGrams = 0;
   let getCaloriesPortion = 0;
   let totalCalories = 0;
@@ -55,7 +61,7 @@ const Calculate = () => {
         <Button onSubmit={calcular} buttonName='Calcular' />
       </CalculateForm>
 
-      {finalResult !== '' && (
+      {finalResult >= 0 && (
         <>
           <PrintTotalResult>
             Calorias totais: {recipeTotalCalories.toFixed(1)}
