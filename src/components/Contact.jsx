@@ -23,6 +23,7 @@ function Contact() {
       errors[key] = !validationRules[key](inputs[key]);
       hasErrors |= errors[key];
     }
+
     setFieldErrors((prev) => ({ ...prev, ...errors }));
     return !hasErrors;
   };
@@ -36,7 +37,8 @@ function Contact() {
     if (Object.keys(fieldErrors).length > 0) {
       validate();
     }
-  }, [inputs]);
+    // eslint-disable-line react-hooks/exhaustive-deps
+  }, [inputs]); // eslint-disable-line react-hooks/exhaustive-deps
   /* End new validation ^^^^ */
 
   // Input Change Handling
@@ -76,7 +78,7 @@ function Contact() {
     setServerState({ submitting: true });
     axios({
       method: 'POST',
-      url: 'https://formspree.io/f/mrgovaoq',
+      url: 'https://formspree.io/f/xpzogbya',
       data: inputs,
     })
       .then((r) => {
