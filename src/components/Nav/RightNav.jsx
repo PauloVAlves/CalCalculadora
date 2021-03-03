@@ -22,17 +22,19 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   font-size: 1.5rem;
-
+  
   li {
     padding: 18px 10px;
   }
-
+  
   a {
     text-decoration: none;
     color: #f2506e;
+    transition: all .5s ease-in-out;
   }
 
   a:hover {
+    transition: all .5s ease-in-out;
     color: #fff;
   }
 

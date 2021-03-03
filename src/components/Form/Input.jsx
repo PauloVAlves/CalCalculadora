@@ -18,6 +18,7 @@ const Input = ({ name, setName, quantity, setQuantity, onSubmit }) => {
         palceholder='Selecione o alimento'
         value={name}
         onChange={(e) => setName(e.target.value)}
+        
       />
       <NamesList />
       <Label htmlFor='addQuantity' labelValue='Quantidade'>
@@ -53,8 +54,11 @@ const StyledInput = styled.input.attrs((props) => ({
   margin-left: auto;
   transition: 0.15s;
   text-align: center;
-
+  outline: none;
+  transition: all .5s ease-in-out;
+  
   &:hover {
+    transition: all .5s ease-in-out;
     border: 1px solid #000;
   }
 

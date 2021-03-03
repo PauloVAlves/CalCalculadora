@@ -104,8 +104,11 @@ const PortionInput = styled.input.attrs((props) => ({
   font-size: 1.1rem;
   text-align: center;
   padding: 10px;
+  outline: none;
+  transition: all .5s ease;
 
   &:hover {
+    transition: all .5s ease;
     border: 1px solid #000;
   }
 
