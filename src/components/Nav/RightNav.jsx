@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { GooglePlay } from '@styled-icons/entypo-social';
 
 const RightNav = ({ open }) => {
   return (
@@ -13,6 +14,11 @@ const RightNav = ({ open }) => {
       <li>
         <Link to='/contato'>Contato</Link>
       </li>
+      <li>
+        <a href='https://play.google.com/store/apps/details?id=com.calcalorias'>
+          <GooglePlay size='18' color='#fff' title='GooglePlay' />
+        </a>
+      </li>
     </Ul>
   );
 };
@@ -22,19 +28,19 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   font-size: 1.5rem;
-  
+
   li {
     padding: 18px 10px;
   }
-  
+
   a {
     text-decoration: none;
     color: #f2506e;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   a:hover {
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     color: #fff;
   }
 
